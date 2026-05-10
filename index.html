@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenGate - The Thoroughbred Marketplace</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
+	<div id="gatekeeper" class="gatekeeper-overlay">
+        <div class="gatekeeper-content">
+            <h2>OPENGATE</h2> 
+            <p>Please enter the access code.</p>
+            <div class="password-box">
+                <input type="password" id="access-code" placeholder="Enter code">
+                <button id="unlock-btn">Enter</button>
+            </div>
+            <p id="error-msg" class="error-text"></p>
+        </div>
+    </div>
+
     <header>
         <div class="logo-container">
             <a href="index.html"><img src="opengate_logo.png" alt="OpenGate Logo" class="site-logo"></a>
@@ -208,6 +220,6 @@
             <a href="#">Contact</a>
         </div>
     </footer>
-	<script src="script.js?v=10"></script>
+	<script src="script.js?v=11"></script>
 </body>
 </html>

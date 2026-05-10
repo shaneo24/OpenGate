@@ -1,4 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ==========================================
+    // GATEKEEPER LOGIC
+    // ==========================================
+    const gatekeeper = document.getElementById('gatekeeper');
+    const accessCodeInput = document.getElementById('access-code');
+    const unlockBtn = document.getElementById('unlock-btn');
+    const errorMsg = document.getElementById('error-msg');
+
+    // CHANGE THIS TO WHATEVER PASSWORD YOU WANT
+    const SECRET_PASSWORD = "allinline"; 
+
+    if (gatekeeper) {
+        // 1. Check if they already unlocked it during this visit
+        if (sessionStorage.getItem('unlocked') === 'true') {
+            gatekeeper.style.display = 'none';
+        }
+
+        // 2. The function that checks their guess
+        function checkPassword() {
+            if (accessCodeInput.value === SECRET_PASSWORD) {
+                // Success: Save status and fade out
+                sessionStorage.setItem('unlocked', 'true');
+                gatekeeper.style.opacity = '0';
+                setTimeout(() => {
+                    gatekeeper.style.display = 'none';
+                }, 500); 
+            } else {
+                // Fail: Show error text
+                errorMsg.style.display = 'block';
+                errorMsg.innerText = "Incorrect access code.";
+                accessCodeInput.value = ''; 
+            }
+        }
+
+        // 3. Listen for the Button Click
+        if (unlockBtn) {
+            unlockBtn.addEventListener('click', checkPassword);
+        }
+
+        // 4. Listen for the Enter Key on the keyboard
+        if (accessCodeInput) {
+            accessCodeInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    checkPassword();
+                }
+            });
+        }
+    }
+	
 	// ==========================================
     // 1. MENU TOGGLE LOGIC (Index Page)
     // ==========================================

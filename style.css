@@ -974,6 +974,88 @@ footer {
     line-height: 1.4;
 }
 
+/* --- Gatekeeper Access Overlay --- */
+.gatekeeper-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 9999; /* Forces it to the very front */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+}
+
+.gatekeeper-content {
+    text-align: center;
+    max-width: 400px;
+    padding: 40px;
+}
+
+.gatekeeper-content h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.gatekeeper-content p {
+    color: #777;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.password-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.password-box input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    letter-spacing: 2px;
+}
+
+.password-box input:focus {
+    border-color: #111;
+}
+
+.password-box button {
+    width: 100%;
+    background-color: #111;
+    color: white;
+    border: 2px solid #111;
+    padding: 15px;
+    font-family: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.password-box button:hover {
+    background-color: transparent;
+    color: #111;
+}
+
+.error-text {
+    color: #d32f2f !important;
+    margin-top: 15px !important;
+    font-size: 0.8rem !important;
+    display: none;
+}
+
 /* --- Mobile Layout Fixes --- */
 @media (max-width: 850px) {
     
