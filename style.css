@@ -909,6 +909,30 @@ footer {
     margin-bottom: 8px; /* Spaces the bullet points out nicely */
 }
 
+/* --- Profile Disclosure Box --- */
+.profile-disclosure {
+    margin-bottom: 20px;
+    padding: 20px 25px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-left: 3px solid #111; /* Signature black accent line */
+}
+
+.profile-disclosure h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.profile-disclosure p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
 /* --- Expense Estimates Section --- */
 .expense-estimates {
     margin-top: 40px;
